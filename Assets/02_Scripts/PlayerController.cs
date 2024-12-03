@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private float r => Input.GetAxis("Mouse X");
     private bool isFire => Input.GetMouseButtonDown(0);
 
+    [SerializeField] private GameObject bulletPrefab;
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
@@ -20,6 +22,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Locomotion();
+        Fire();
+    }
+
+    private void Fire()
+    {
+
     }
 
     private void Locomotion()
