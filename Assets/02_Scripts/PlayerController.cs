@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-
+        GameObject bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        bullet.GetComponent<Bullet>().Shoot();
     }
 
     private void Locomotion()
