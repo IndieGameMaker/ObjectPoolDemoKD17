@@ -8,11 +8,17 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        Shoot();
     }
 
     public void Shoot()
     {
         rb.AddRelativeForce(Vector3.forward * force);
+
+        Invoke(nameof(ReturnPool), 3.0f);
+    }
+
+    void ReturnPool()
+    {
+        PoolManager.Instance.bulletPool.Release(this);
     }
 }
