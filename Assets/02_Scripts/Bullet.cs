@@ -31,4 +31,13 @@ public class Bullet : MonoBehaviour
 
         rb.linearVelocity = rb.angularVelocity = Vector3.zero;
     }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        // Invoke 메소드 취소
+        CancelInvoke(nameof(ReturnPool));
+
+        InitItem();
+        PoolManager.Instance.bulletPool.Release(this);
+    }
 }
