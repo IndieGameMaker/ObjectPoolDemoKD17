@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     public void Shoot()
     {
+        rb.rotation = Quaternion.LookRotation(transform.forward);
         rb.AddRelativeForce(Vector3.forward * force);
 
         Invoke(nameof(ReturnPool), 3.0f);
