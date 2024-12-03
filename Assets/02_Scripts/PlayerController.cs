@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isFire => Input.GetMouseButtonDown(0);
 
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePos;
 
     void Start()
     {
