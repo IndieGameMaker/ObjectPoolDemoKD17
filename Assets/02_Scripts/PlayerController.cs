@@ -30,8 +30,15 @@ public class PlayerController : MonoBehaviour
     {
         if (isFire)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            //GameObject bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
             //bullet.GetComponent<Bullet>().Shoot();
+
+            // 풀에서 bullet 요청
+            Bullet bullet = PoolManager.Instance.bulletPool.Get();
+            // 위치와 각도 설정
+            bullet.transform.SetPositionAndRotation(firePos.position, firePos.rotation);
+            // 발사
+            bullet.Shoot();
         }
     }
 
