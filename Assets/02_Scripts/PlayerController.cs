@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     private float v => Input.GetAxis("Vertical");
     private float h => Input.GetAxis("Horizontal");
     private float r => Input.GetAxis("Mouse X");
-    private bool isFire => Input.GetMouseButtonDown(0);
+    private bool isFire => Input.GetMouseButton(0);
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePos;
+    [SerializeField] private float fireRate = 0.1f;
+
+    private float nextFireTime = 0.0f;
 
     void Start()
     {
@@ -30,8 +33,10 @@ public class PlayerController : MonoBehaviour
 
     private void Fire()
     {
-        if (isFire)
+        if (isFire && Time.time >= nextFireTime)
         {
+            nextFireTime = Time.time + fireRate;
+
             //GameObject bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
             //bullet.GetComponent<Bullet>().Shoot();
 
