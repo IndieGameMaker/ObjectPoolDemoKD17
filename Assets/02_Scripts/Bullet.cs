@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        Shoot();
     }
 
     public void Shoot()
