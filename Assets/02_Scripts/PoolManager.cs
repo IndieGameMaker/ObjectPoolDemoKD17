@@ -24,6 +24,7 @@ public class PoolManager : MonoBehaviour
 
     void Start()
     {
+
         // ObjectPool 초기화
         bulletPool = new ObjectPool<Bullet>(
             createFunc: CreateItem,
