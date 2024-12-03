@@ -19,6 +19,15 @@ public class Bullet : MonoBehaviour
 
     void ReturnPool()
     {
+        InitItem();
         PoolManager.Instance.bulletPool.Release(this);
+    }
+
+    void InitItem()
+    {
+        this.transform.position = Vector3.zero;
+        this.transform.rotation = Quaternion.identity;
+
+        rb.linearVelocity = rb.angularVelocity = Vector3.zero;
     }
 }
