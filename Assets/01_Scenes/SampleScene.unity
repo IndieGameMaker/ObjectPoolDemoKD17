@@ -272,7 +272,7 @@ MonoBehaviour:
   target: {fileID: 482777129}
   distance: 5
   height: 3
-  damping: 1
+  damping: 5
 --- !u!1 &404099142
 GameObject:
   m_ObjectHideFlags: 0
