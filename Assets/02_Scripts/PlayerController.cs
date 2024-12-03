@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController cc;
     private float moveSpeed = 8.0f;
-    private float turnSpeed = 100.0f;
+    private float turnSpeed = 300.0f;
 
     private float v => Input.GetAxis("Vertical");
     private float h => Input.GetAxis("Horizontal");
