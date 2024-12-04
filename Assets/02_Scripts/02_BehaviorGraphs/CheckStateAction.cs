@@ -33,6 +33,8 @@ public partial class CheckStateAction : Action
             State.Value = global::State.PATROL;
         }
 
+        Debug.Log($"State : {State.Value} / 거리 : {distance}");
+
         return Status.Success;
     }
 }
