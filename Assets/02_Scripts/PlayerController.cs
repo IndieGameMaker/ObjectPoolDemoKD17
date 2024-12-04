@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out var hit))
         {
             targetIK.position = hit.point;
+            // 총알 발사 각도 보정
+            firePos.forward = (hit.point - firePos.position).normalized;
         }
         else
         {
