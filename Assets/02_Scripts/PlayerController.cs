@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePos;
+    [SerializeField] private Transform targetIK;
     [SerializeField] private float fireRate = 0.1f;
 
     private float nextFireTime = 0.0f;
@@ -27,6 +28,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 10.0f, Color.green);
+
+        if (Physics.Raycast(ray, out var hit))
+        {
+            targetIK.position = hit.point;
+        }
+        else
+        {
+            targetIK.position = Camera.main.transform.position + (ray.direction * 30.0f);
+        }
+
         Locomotion();
         Fire();
     }

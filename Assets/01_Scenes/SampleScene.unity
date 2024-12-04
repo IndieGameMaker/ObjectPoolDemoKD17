@@ -1237,6 +1237,46 @@ MonoBehaviour:
   - m_Rig: {fileID: 1661951870}
     m_Active: 1
   m_Effectors: []
+--- !u!114 &589393066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589393061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f68ac878c13c4b7e830310a5436afba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 856226912419487084, guid: 1733663a1f8a94d9b831ee8c8878e82b, type: 3}
+  firePos: {fileID: 1545978084}
+  fireRate: 0.1
+--- !u!143 &589393067
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589393061}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &593736375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400042, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
@@ -1557,6 +1597,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2045634525}
+  - {fileID: 1545978084}
   m_Father: {fileID: 1028258445}
   m_LocalEulerAnglesHint: {x: -61.086, y: -229.456, z: -5.463}
 --- !u!23 &996104280
@@ -2073,7 +2114,44 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100092, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 589393065}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 589393067}
+    - targetCorrespondingSourceObject: {fileID: 100092, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 589393066}
   m_SourcePrefab: {fileID: 100100000, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
+--- !u!1 &1545978083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545978084}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545978084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545978083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.733, y: 0.099, z: 0.005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 996104279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1549724524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400060, guid: 8daa50189dd68ef46b8bd15dad17a34c, type: 3}
