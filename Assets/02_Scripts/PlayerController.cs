@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fireRate = 0.1f;
 
     private float nextFireTime = 0.0f;
+    private Animator animator;
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -64,6 +66,9 @@ public class PlayerController : MonoBehaviour
 
     private void Locomotion()
     {
+        animator.SetFloat("Forward", v);
+        animator.SetFloat("Strafe", h);
+
         Vector3 moveDir = (transform.forward * v) + (transform.right * h);
         cc.Move(moveDir.normalized * Time.deltaTime * moveSpeed);
 
